@@ -1,0 +1,28 @@
+{
+  "name": "as-date",
+  "version": "0.0.1",
+  "description": "Staging AssemblyScript Date implementation by @LiaoPeng , as an installable AssemblyScript library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torch2424/as-date.git"
+  },
+  "keywords": [
+    "assemblyscript",
+    "date",
+    "time",
+    "as",
+    "asc",
+    "wasm",
+    "webassembly"
+  ],
+  "author": "Aaron Turner",
+  "license": "GPL-2.0-only",
+  "bugs": {
+    "url": "https://github.com/torch2424/as-date/issues"
+  },
+  "homepage": "https://github.com/torch2424/as-date#readme"
+}
