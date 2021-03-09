@@ -18,9 +18,32 @@ export class Date {
   private localDate: CalendarDate | null;
   private utcDate: CalendarDate | null;
 
-  constructor(value: i64) {
+
+  @inline static UTC(
+    year: i32,
+    month: i32 = 0,
+    day: i32 = 1,
+    hour: i32 = 0,
+    minute: i32 = 0,
+    second: i32 = 0,
+    millisecond: i64 = 0
+  ): i64 {
+    let date = new Date(0);
+
+    date.setUTCFullYear(year);
+    date.setUTCMonth(month);
+    date.setUTCDate(day);
+    date.setUTCHours(hour);
+    date.setUTCMinutes(minute);
+    date.setUTCSeconds(second);
+    date.setUTCMilliseconds(millisecond);
+
+    return date;
+  }
+
+  constructor(value: i64, utcTimezoneOffset: i32 = 0) {
     this.value = value;
-    this.timeZone = new TimeZone("UTC", 0);
+    this.timeZone = new TimeZone("UTC", utcTimezoneOffset);
   }
 
   getTime(): i64 {

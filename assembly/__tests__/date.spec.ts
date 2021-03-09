@@ -2,12 +2,18 @@ import {
   Date
 } from '../index';
 
-function test_utc_millis(millis: i64, year: i32, month: i32, dayOfMonth: i32, dayOfWeek: i32, hours: i32, minutes: i32, seconds: i32, milliseconds: i32) : void {
-  var date = new Date(millis);
-  test_utc_date(date, year, month, dayOfMonth, dayOfWeek, hours, minutes, seconds, milliseconds);
-}
-
-function test_utc_date(date: Date, year: i32, month: i32, dayOfMonth: i32, dayOfWeek: i32, hours: i32, minutes: i32, seconds: i32, milliseconds: i32) : void {
+// Utility functions for tests
+function test_utc_date(
+  date: Date, 
+  year: i32, 
+  month: i32, 
+  dayOfMonth: i32, 
+  dayOfWeek: i32, 
+  hours: i32, 
+  minutes: i32, 
+  seconds: i32, 
+  milliseconds: i32
+) : void {
   assert(date.getUTCFullYear() == year);
   assert(date.getUTCMonth() == month);
   assert(date.getUTCDate() == dayOfMonth);
@@ -18,23 +24,43 @@ function test_utc_date(date: Date, year: i32, month: i32, dayOfMonth: i32, dayOf
   assert(date.getUTCMilliseconds() == milliseconds);
 }
 
-// TODO:
+function test_utc_millis(
+  millis: i64, 
+  year: i32, 
+  month: i32, 
+  dayOfMonth: i32, 
+  dayOfWeek: i32, 
+  hours: i32, 
+  minutes: i32, 
+  seconds: i32, 
+  milliseconds: i32
+) : void {
+  var date = new Date(millis);
+  test_utc_date(date, year, month, dayOfMonth, dayOfWeek, hours, minutes, seconds, milliseconds);
+}
+
 describe('Date', () => {
+
+  it('Should handle a timestamp of 0', () => {
+    assert(Date.UTC(1970, 0, 1) == 0);
+    assert(Date.UTC(1970, 0, 1, 0, 0, 0, 0) == 0);
+  });
+
+  it('should be able to create the correct timestamp', () => {
+    let creationTime = (Date.UTC(2018, 10, 10, 11, 0, 0, 1)).getTime();
+    assert(creationTime == 1541847600001);
+  });
+
+  it('should be able to modify the timestamp', () => {
+    let creationTime = (Date.UTC(2018, 10, 10, 11, 0, 0, 1)).getTime();
+    var date = new Date(creationTime);
+    assert(date.getTime() == creationTime);
+    date.setTime(creationTime + 1);
+    assert(date.getTime() == creationTime + 1);
+  });
+
   
 });
-
-assert(Date.UTC(1970, 0, 1) == 0);
-assert(Date.UTC(1970, 0, 1, 0, 0, 0, 0) == 0);
-
-var creationTime = Date.UTC(2018, 10, 10, 11, 0, 0, 1);
-assert(creationTime == 1541847600001);
-
-assert(Date.now() > creationTime);
-
-var date = new Date(creationTime);
-assert(date.getTime() == creationTime);
-date.setTime(creationTime + 1);
-assert(date.getTime() == creationTime + 1);
 
 // Test date get methods ////////////////////////////////////////////////////////////
 creationTime = Date.UTC(2018, 10, 10, 11, 0, 0, 1); // Sat, 10 Nov 2018 11:00:00 GMT
