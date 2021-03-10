@@ -26,7 +26,7 @@ export class Date {
     hour: i32 = 0,
     minute: i32 = 0,
     second: i32 = 0,
-    millisecond: i64 = 0
+    millisecond: i32 = 0
   ): i64 {
     let date = new Date(0);
 
@@ -38,7 +38,7 @@ export class Date {
     date.setUTCSeconds(second);
     date.setUTCMilliseconds(millisecond);
 
-    return date;
+    return date.getTime();
   }
 
   constructor(value: i64, utcTimezoneOffset: i32 = 0) {
