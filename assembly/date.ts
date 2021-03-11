@@ -11,6 +11,28 @@ import {
   setMilliseconds,
 } from "./calendar";
 
+
+/**
+ * Missing the following methods:
+ * Date()
+ * Date.now()
+ * Date.parse()
+ * getTimezoneOffset()
+ * getYear()
+ * setYear()
+ * toDateString()
+ * toISOString()
+ * toJSON()
+ * toGMTString()
+ * toLocaleDateString()
+ * toLocaleFormat()
+ * toLocaleString()
+ * toLocaleTimeString()
+ * toString()
+ * toTimeString()
+ * toUTCString()
+ * valueOf()
+ */
 export class Date {
   private value: i64;
   private timeZone: TimeZone; // The local time zone
