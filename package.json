@@ -2,9 +2,13 @@
   "name": "as-date",
   "version": "0.0.1",
   "description": "Staging AssemblyScript Date implementation by @LiaoPeng , as an installable AssemblyScript library.",
-  "main": "index.js",
+  "main": "assembly/index.ts",
+  "ascMain": "assembly/index.ts",
   "scripts": {
-    "test": "asp"
+    "test": "asp --verbose",
+    "lint": "prettier --write \"**/*.ts\"",
+    "docs": "typedoc --plugin typedoc-plugin-markdown --out temp-docs --tsconfig assembly/tsconfig.json --exclude \"node_modules/**/*\" --readme none assembly/index.ts",
+    "docs:deploy": "cp -r temp-docs/* docs"
   },
   "repository": {
     "type": "git",
@@ -20,7 +24,7 @@
     "webassembly"
   ],
   "author": "Aaron Turner",
-  "license": "GPL-2.0-only",
+  "license": "SEE LICENSE IN LICENSE",
   "bugs": {
     "url": "https://github.com/torch2424/as-date/issues"
   },
@@ -30,6 +34,10 @@
   },
   "devDependencies": {
     "@as-pect/cli": "^6.0.0",
-    "assemblyscript": "^0.18.14"
+    "assemblyscript": "^0.18.14",
+    "prettier": "2.2.1",
+    "typedoc": "^0.20.30",
+    "typedoc-plugin-markdown": "^3.6.0",
+    "typescript": "^4.2.3"
   }
 }

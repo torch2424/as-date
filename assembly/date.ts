@@ -8,16 +8,14 @@ import {
   setHours,
   setMinutes,
   setSeconds,
-  setMilliseconds
+  setMilliseconds,
 } from "./calendar";
 
 export class Date {
-
   private value: i64;
   private timeZone: TimeZone; // The local time zone
   private localDate: CalendarDate | null;
   private utcDate: CalendarDate | null;
-
 
   @inline static UTC(
     year: i32,
@@ -56,12 +54,12 @@ export class Date {
   }
 
   setUTCTimeZone(offset: i32): TimeZone {
-    this.timezone = new TimeZone("UTC", offset);
-    return this.timezone;
+    this.timeZone = new TimeZone("UTC", offset);
+    return this.timeZone;
   }
 
   getUTCTimeZone(): TimeZone {
-    return this.timezone;
+    return this.timeZone;
   }
 
   private getLocalCalendarDate(): CalendarDate {
@@ -89,15 +87,19 @@ export class Date {
   }
 
   private isNormalizeLocalDate(): bool {
-    return this.localDate != null
-    && this.localDate!.millis == this.value
-    && this.localDate!.isNormalized;
+    return (
+      this.localDate != null &&
+      this.localDate!.millis == this.value &&
+      this.localDate!.isNormalized
+    );
   }
 
   private isNormalizeUTCDate(): bool {
-    return this.utcDate != null
-    && this.utcDate!.millis == this.value
-    && this.utcDate!.isNormalized;
+    return (
+      this.utcDate != null &&
+      this.utcDate!.millis == this.value &&
+      this.utcDate!.isNormalized
+    );
   }
 
   getFullYear(): i32 {
@@ -170,17 +172,17 @@ export class Date {
   }
 
   /**
-  * Returns the day of the week represented by this date. The
-  * returned value ({@code 0} = Sunday, {@code 1} = Monday,
-  * {@code 2} = Tuesday, {@code 3} = Wednesday, {@code 4} =
-  * Thursday, {@code 5} = Friday, {@code 6} = Saturday)
-  */
+   * Returns the day of the week represented by this date. The
+   * returned value ({@code 0} = Sunday, {@code 1} = Monday,
+   * {@code 2} = Tuesday, {@code 3} = Wednesday, {@code 4} =
+   * Thursday, {@code 5} = Friday, {@code 6} = Saturday)
+   */
   getDay(): i32 {
-    return this.getLocalCalendarDate().dayOfWeek - 1 ;
+    return this.getLocalCalendarDate().dayOfWeek - 1;
   }
 
   getUTCDay(): i32 {
-    return this.getUTCCalendarDate().dayOfWeek - 1 ;
+    return this.getUTCCalendarDate().dayOfWeek - 1;
   }
 
   getHours(): i32 {
