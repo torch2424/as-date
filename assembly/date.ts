@@ -17,51 +17,6 @@ export class Date {
   private localDate: CalendarDate | null;
   private utcDate: CalendarDate | null;
 
-  @inline static UTC(
-    year: i32,
-    month: i32 = 0,
-    day: i32 = 1,
-    hour: i32 = 0,
-    minute: i32 = 0,
-    second: i32 = 0,
-    millisecond: i32 = 0
-  ): i64 {
-    let date = new Date(0);
-
-    date.setUTCFullYear(year);
-    date.setUTCMonth(month);
-    date.setUTCDate(day);
-    date.setUTCHours(hour);
-    date.setUTCMinutes(minute);
-    date.setUTCSeconds(second);
-    date.setUTCMilliseconds(millisecond);
-
-    return date.getTime();
-  }
-
-  constructor(value: i64, utcTimezoneOffset: i32 = 0) {
-    this.value = value;
-    this.timeZone = new TimeZone("UTC", utcTimezoneOffset);
-  }
-
-  getTime(): i64 {
-    return this.value;
-  }
-
-  setTime(value: i64): i64 {
-    this.value = value;
-    return value;
-  }
-
-  setUTCTimeZone(offset: i32): TimeZone {
-    this.timeZone = new TimeZone("UTC", offset);
-    return this.timeZone;
-  }
-
-  getUTCTimeZone(): TimeZone {
-    return this.timeZone;
-  }
-
   private getLocalCalendarDate(): CalendarDate {
     if (this.isNormalizeLocalDate()) {
       return this.localDate!;
@@ -89,17 +44,56 @@ export class Date {
   private isNormalizeLocalDate(): bool {
     return (
       this.localDate != null &&
-      this.localDate!.millis == this.value &&
-      this.localDate!.isNormalized
+        this.localDate!.millis == this.value &&
+        this.localDate!.isNormalized
     );
   }
 
   private isNormalizeUTCDate(): bool {
     return (
       this.utcDate != null &&
-      this.utcDate!.millis == this.value &&
-      this.utcDate!.isNormalized
+        this.utcDate!.millis == this.value &&
+        this.utcDate!.isNormalized
     );
+  }
+
+  constructor(value: i64) {
+    this.value = value;
+
+    // Default the Timezone to zero, as there is currently no way to get the timezone in WASI
+    // https://github.com/WebAssembly/WASI/issues/167
+    this.timeZone = new TimeZone("UTC", 0);
+  }
+
+  @inline static UTC(
+    year: i32,
+    month: i32 = 0,
+    day: i32 = 1,
+    hour: i32 = 0,
+    minute: i32 = 0,
+    second: i32 = 0,
+    millisecond: i32 = 0
+  ): i64 {
+    let date = new Date(0);
+
+    date.setUTCFullYear(year);
+    date.setUTCMonth(month);
+    date.setUTCDate(day);
+    date.setUTCHours(hour);
+    date.setUTCMinutes(minute);
+    date.setUTCSeconds(second);
+    date.setUTCMilliseconds(millisecond);
+
+    return date.getTime();
+  }
+
+  getTime(): i64 {
+    return this.value;
+  }
+
+  setTime(value: i64): i64 {
+    this.value = value;
+    return value;
   }
 
   getFullYear(): i32 {

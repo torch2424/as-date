@@ -15,34 +15,6 @@ This library builds upon @LiaoPeng 's work in [AssemblyScript/assemblyscript#357
 ## Quick Start
 
 ```ts
-import { Date } from "as-date";
-
-// Let's create the date:
-// Wednesday, March 10th, 2021 18:06:24:242 UTC-7
-
-let year = 2021;
-let month = 2; // March
-let dayOfMonth = 10;
-let dayOfWeek = 4;
-let hours = 18;
-let minutes = 6;
-let seconds = 24;
-let milliseconds = 242;
-
-// The Date
-let date = new Date(
-  
-);
-
-
-assert(date.getUTCFullYear() == year);
-assert(date.getUTCMonth() == month);
-assert(date.getUTCDate() == dayOfMonth);
-assert(date.getUTCDay() == dayOfWeek);
-assert(date.getUTCHours() == hours);
-assert(date.getUTCMinutes() == minutes);
-assert(date.getUTCSeconds() == seconds);
-assert(date.getUTCMilliseconds() == milliseconds);
 ```
 
 ## Reference API
