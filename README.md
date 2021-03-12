@@ -20,8 +20,8 @@ This library builds upon @LiaoPeng 's work in [AssemblyScript/assemblyscript#357
 import { Date } from "as-date";
 
 // Let's create the date:
+// Universal Time: Wednesday, March 10th, 2021 19:06:24:242 UTC+0 (Universal Time)
 // Local time: Wednesday, March 10th, 2021 12:06:24:242 UTC-7 (Pacific Standard Time)
-// UTC Time: Wednesday, March 10th, 2021 19:06:24:242 UTC+0 (Universal Time)
 
 // Values will count from 0, unless otherwise specified.
 let year = 2021;

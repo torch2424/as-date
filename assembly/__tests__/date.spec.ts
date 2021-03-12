@@ -25,8 +25,8 @@ function test_utc_date(
 describe("Quick Start README", () => {
   it("should handle the example in the README", () => {
     // Let's create the date:
+    // Universal Time: Wednesday, March 10th, 2021 19:06:24:242 UTC+0 (Universal Time)
     // Local time: Wednesday, March 10th, 2021 12:06:24:242 UTC-7 (Pacific Standard Time)
-    // UTC Time: Wednesday, March 10th, 2021 19:06:24:242 UTC+0 (Universal Time)
 
     // Values will count from 0, unless otherwise specified.
     let year = 2021;
