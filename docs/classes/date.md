@@ -2,6 +2,32 @@
 
 # Class: Date
 
+JavaScript Date Object, implemented in AssemblyScript
+Inspired by: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+
+Missing the following methods:
+
+Static Methods:
+Date.now()
+Date.parse()
+
+Instance Methods:
+
+getYear() [Deprecated]
+setYear() [Deprecated]
+toDateString()
+toISOString()
+toJSON()
+toGMTString()
+toLocaleDateString()
+toLocaleFormat()
+toLocaleString()
+toLocaleTimeString()
+toString()
+toTimeString()
+toUTCString()
+valueOf()
+
 ## Table of contents
 
 ### Constructors
@@ -27,6 +53,7 @@
 - [getMonth](date.md#getmonth)
 - [getSeconds](date.md#getseconds)
 - [getTime](date.md#gettime)
+- [getTimezoneOffset](date.md#gettimezoneoffset)
 - [getUTCCalendarDate](date.md#getutccalendardate)
 - [getUTCDate](date.md#getutcdate)
 - [getUTCDay](date.md#getutcday)
@@ -36,7 +63,6 @@
 - [getUTCMinutes](date.md#getutcminutes)
 - [getUTCMonth](date.md#getutcmonth)
 - [getUTCSeconds](date.md#getutcseconds)
-- [getUTCTimeZone](date.md#getutctimezone)
 - [isNormalizeLocalDate](date.md#isnormalizelocaldate)
 - [isNormalizeUTCDate](date.md#isnormalizeutcdate)
 - [setDate](date.md#setdate)
@@ -47,6 +73,7 @@
 - [setMonth](date.md#setmonth)
 - [setSeconds](date.md#setseconds)
 - [setTime](date.md#settime)
+- [setTimezoneOffset](date.md#settimezoneoffset)
 - [setUTCDate](date.md#setutcdate)
 - [setUTCFullYear](date.md#setutcfullyear)
 - [setUTCHours](date.md#setutchours)
@@ -54,25 +81,23 @@
 - [setUTCMinutes](date.md#setutcminutes)
 - [setUTCMonth](date.md#setutcmonth)
 - [setUTCSeconds](date.md#setutcseconds)
-- [setUTCTimeZone](date.md#setutctimezone)
 - [UTC](date.md#utc)
 
 ## Constructors
 
 ### constructor
 
-\+ **new Date**(`value`: *number*, `utcTimezoneOffset?`: *number*): [*Date*](date.md)
+\+ **new Date**(`value`: *number*): [*Date*](date.md)
 
 #### Parameters:
 
-Name | Type | Default value |
-:------ | :------ | :------ |
-`value` | *number* | - |
-`utcTimezoneOffset` | *number* | 0 |
+Name | Type |
+:------ | :------ |
+`value` | *number* |
 
 **Returns:** [*Date*](date.md)
 
-Defined in: [date.ts:40](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L40)
+Defined in: [date.ts:86](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L86)
 
 ## Properties
 
@@ -80,7 +105,7 @@ Defined in: [date.ts:40](https://github.com/torch2424/as-date/blob/30c25fb/assem
 
 • `Private` **localDate**: *null* \| *CalendarDate*
 
-Defined in: [date.ts:17](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L17)
+Defined in: [date.ts:45](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L45)
 
 ___
 
@@ -88,7 +113,7 @@ ___
 
 • `Private` **timeZone**: *TimeZone*
 
-Defined in: [date.ts:16](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L16)
+Defined in: [date.ts:44](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L44)
 
 ___
 
@@ -96,7 +121,7 @@ ___
 
 • `Private` **utcDate**: *null* \| *CalendarDate*
 
-Defined in: [date.ts:18](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L18)
+Defined in: [date.ts:46](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L46)
 
 ___
 
@@ -104,7 +129,7 @@ ___
 
 • `Private` **value**: *number*
 
-Defined in: [date.ts:15](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L15)
+Defined in: [date.ts:43](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L43)
 
 ## Methods
 
@@ -114,7 +139,9 @@ Defined in: [date.ts:15](https://github.com/torch2424/as-date/blob/30c25fb/assem
 
 **Returns:** *number*
 
-Defined in: [date.ts:154](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L154)
+the day of the month (1–31) of the specified date according to local time.
+
+Defined in: [date.ts:233](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L233)
 
 ___
 
@@ -122,14 +149,14 @@ ___
 
 ▸ **getDay**(): *number*
 
-Returns the day of the week represented by this date. The
-returned value ({@code 0} = Sunday, {@code 1} = Monday,
+Returns the day of the week represented by this date, according to local time.
+The returned value ({@code 0} = Sunday, {@code 1} = Monday,
 {@code 2} = Tuesday, {@code 3} = Wednesday, {@code 4} =
 Thursday, {@code 5} = Friday, {@code 6} = Saturday)
 
 **Returns:** *number*
 
-Defined in: [date.ts:180](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L180)
+Defined in: [date.ts:270](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L270)
 
 ___
 
@@ -139,7 +166,9 @@ ___
 
 **Returns:** *number*
 
-Defined in: [date.ts:105](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L105)
+The full year as a 4-digit number, according to local time.
+
+Defined in: [date.ts:163](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L163)
 
 ___
 
@@ -149,7 +178,9 @@ ___
 
 **Returns:** *number*
 
-Defined in: [date.ts:188](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L188)
+the hour (0–23) in the specified date according to local time.
+
+Defined in: [date.ts:287](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L287)
 
 ___
 
@@ -159,7 +190,7 @@ ___
 
 **Returns:** *CalendarDate*
 
-Defined in: [date.ts:65](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L65)
+Defined in: [date.ts:48](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L48)
 
 ___
 
@@ -169,7 +200,9 @@ ___
 
 **Returns:** *number*
 
-Defined in: [date.ts:248](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L248)
+the milliseconds (0–999) in the specified date according to local time.
+
+Defined in: [date.ts:389](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L389)
 
 ___
 
@@ -179,7 +212,9 @@ ___
 
 **Returns:** *number*
 
-Defined in: [date.ts:208](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L208)
+the minutes (0–59) in the specified date according to local time.
+
+Defined in: [date.ts:321](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L321)
 
 ___
 
@@ -189,7 +224,9 @@ ___
 
 **Returns:** *number*
 
-Defined in: [date.ts:134](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L134)
+the month (0–11) in the specified date according to local time.
+
+Defined in: [date.ts:199](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L199)
 
 ___
 
@@ -199,7 +236,9 @@ ___
 
 **Returns:** *number*
 
-Defined in: [date.ts:228](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L228)
+the seconds (0–59) in the specified date according to local time.
+
+Defined in: [date.ts:355](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L355)
 
 ___
 
@@ -209,7 +248,21 @@ ___
 
 **Returns:** *number*
 
-Defined in: [date.ts:47](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L47)
+the number of milliseconds since January 1, 1970, 00:00:00 UTC.
+
+Defined in: [date.ts:132](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L132)
+
+___
+
+### getTimezoneOffset
+
+▸ **getTimezoneOffset**(): *number*
+
+**Returns:** *number*
+
+time zone difference, in minutes, from UTC.
+
+Defined in: [date.ts:148](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L148)
 
 ___
 
@@ -219,7 +272,7 @@ ___
 
 **Returns:** *CalendarDate*
 
-Defined in: [date.ts:77](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L77)
+Defined in: [date.ts:60](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L60)
 
 ___
 
@@ -229,7 +282,9 @@ ___
 
 **Returns:** *number*
 
-Defined in: [date.ts:164](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L164)
+the day of the month (1–31) of the specified date according to universal time.
+
+Defined in: [date.ts:250](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L250)
 
 ___
 
@@ -237,9 +292,14 @@ ___
 
 ▸ **getUTCDay**(): *number*
 
+Returns the day of the week represented by this date, according to universal time.
+The returned value ({@code 0} = Sunday, {@code 1} = Monday,
+{@code 2} = Tuesday, {@code 3} = Wednesday, {@code 4} =
+Thursday, {@code 5} = Friday, {@code 6} = Saturday)
+
 **Returns:** *number*
 
-Defined in: [date.ts:184](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L184)
+Defined in: [date.ts:280](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L280)
 
 ___
 
@@ -249,7 +309,9 @@ ___
 
 **Returns:** *number*
 
-Defined in: [date.ts:120](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L120)
+The full year as a 4-digit number, according to universal time.
+
+Defined in: [date.ts:181](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L181)
 
 ___
 
@@ -259,7 +321,9 @@ ___
 
 **Returns:** *number*
 
-Defined in: [date.ts:198](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L198)
+the hour (0–23) in the specified date according to universal time.
+
+Defined in: [date.ts:304](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L304)
 
 ___
 
@@ -269,7 +333,9 @@ ___
 
 **Returns:** *number*
 
-Defined in: [date.ts:258](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L258)
+the milliseconds (0–999) in the specified date according to universal time.
+
+Defined in: [date.ts:406](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L406)
 
 ___
 
@@ -279,7 +345,9 @@ ___
 
 **Returns:** *number*
 
-Defined in: [date.ts:218](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L218)
+the minutes (0–59) in the specified date according to universal time.
+
+Defined in: [date.ts:338](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L338)
 
 ___
 
@@ -289,7 +357,7 @@ ___
 
 **Returns:** *number*
 
-Defined in: [date.ts:144](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L144)
+Defined in: [date.ts:216](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L216)
 
 ___
 
@@ -299,17 +367,9 @@ ___
 
 **Returns:** *number*
 
-Defined in: [date.ts:238](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L238)
+the seconds (0–59) in the specified date according to universal time.
 
-___
-
-### getUTCTimeZone
-
-▸ **getUTCTimeZone**(): *TimeZone*
-
-**Returns:** *TimeZone*
-
-Defined in: [date.ts:61](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L61)
+Defined in: [date.ts:372](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L372)
 
 ___
 
@@ -319,7 +379,7 @@ ___
 
 **Returns:** bool
 
-Defined in: [date.ts:89](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L89)
+Defined in: [date.ts:72](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L72)
 
 ___
 
@@ -329,7 +389,7 @@ ___
 
 **Returns:** bool
 
-Defined in: [date.ts:97](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L97)
+Defined in: [date.ts:80](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L80)
 
 ___
 
@@ -339,13 +399,15 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`date` | *number* |
+Name | Type | Description |
+:------ | :------ | :------ |
+`date` | *number* | the day of the month (1–31) of the specified date according to local time.   |
 
 **Returns:** *number*
 
-Defined in: [date.ts:158](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L158)
+the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
+
+Defined in: [date.ts:241](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L241)
 
 ___
 
@@ -359,13 +421,13 @@ The method sets the full year for a specified date according to local time.
 
 Name | Type | Description |
 :------ | :------ | :------ |
-`year` | *number* | the full year to set   |
+`year` | *number* | the full 4-digit year to set   |
 
 **Returns:** *number*
 
-Returns new timestamp.
+the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
 
-Defined in: [date.ts:114](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L114)
+Defined in: [date.ts:172](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L172)
 
 ___
 
@@ -375,13 +437,15 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`hours` | *number* |
+Name | Type | Description |
+:------ | :------ | :------ |
+`hours` | *number* | the hour (0-23) of the specified date according to local time.   |
 
 **Returns:** *number*
 
-Defined in: [date.ts:192](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L192)
+the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
+
+Defined in: [date.ts:295](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L295)
 
 ___
 
@@ -391,13 +455,15 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`milliseconds` | *number* |
+Name | Type | Description |
+:------ | :------ | :------ |
+`milliseconds` | *number* | the milliseconds (0–999) in the specified date according to local time.   |
 
 **Returns:** *number*
 
-Defined in: [date.ts:252](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L252)
+the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
+
+Defined in: [date.ts:397](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L397)
 
 ___
 
@@ -407,13 +473,15 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`minutes` | *number* |
+Name | Type | Description |
+:------ | :------ | :------ |
+`minutes` | *number* | the minutes (0–59) in the specified date according to local time.   |
 
 **Returns:** *number*
 
-Defined in: [date.ts:212](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L212)
+the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
+
+Defined in: [date.ts:329](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L329)
 
 ___
 
@@ -423,13 +491,15 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`month` | *number* |
+Name | Type | Description |
+:------ | :------ | :------ |
+`month` | *number* | the month (0–11) in the specified date according to local time.   |
 
 **Returns:** *number*
 
-Defined in: [date.ts:138](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L138)
+the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
+
+Defined in: [date.ts:207](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L207)
 
 ___
 
@@ -439,29 +509,51 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`seconds` | *number* |
+Name | Type | Description |
+:------ | :------ | :------ |
+`seconds` | *number* | the seconds (0–59) in the specified date according to local time.   |
 
 **Returns:** *number*
 
-Defined in: [date.ts:232](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L232)
+the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
+
+Defined in: [date.ts:363](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L363)
 
 ___
 
 ### setTime
 
-▸ **setTime**(`value`: *number*): *number*
+▸ **setTime**(`milliseconds`: *number*): *number*
+
+#### Parameters:
+
+Name | Type | Description |
+:------ | :------ | :------ |
+`milliseconds` | *number* | the number of milliseconds since January 1, 1970, 00:00:00 UTC.   |
+
+**Returns:** *number*
+
+the number of milliseconds since January 1, 1970, 00:00:00 UTC. (the passed value)
+
+Defined in: [date.ts:140](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L140)
+
+___
+
+### setTimezoneOffset
+
+▸ **setTimezoneOffset**(`minutes`: *number*): *number*
 
 #### Parameters:
 
 Name | Type |
 :------ | :------ |
-`value` | *number* |
+`minutes` | *number* |
 
 **Returns:** *number*
 
-Defined in: [date.ts:51](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L51)
+time zone difference, in minutes, from UTC. (the passed value)
+
+Defined in: [date.ts:156](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L156)
 
 ___
 
@@ -471,13 +563,15 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`date` | *number* |
+Name | Type | Description |
+:------ | :------ | :------ |
+`date` | *number* | the day of the month (1–31) of the specified date according to universal time.   |
 
 **Returns:** *number*
 
-Defined in: [date.ts:168](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L168)
+the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
+
+Defined in: [date.ts:258](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L258)
 
 ___
 
@@ -491,11 +585,13 @@ The setUTCFullYear() method sets the full year for a specified date according to
 
 Name | Type | Description |
 :------ | :------ | :------ |
-`year` | *number* | the full year to set.    |
+`year` | *number* | the full 4-digit year to set.   |
 
 **Returns:** *number*
 
-Defined in: [date.ts:128](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L128)
+the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
+
+Defined in: [date.ts:190](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L190)
 
 ___
 
@@ -505,13 +601,15 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`hours` | *number* |
+Name | Type | Description |
+:------ | :------ | :------ |
+`hours` | *number* | the hour (0-23) of the specified date according to universal time.   |
 
 **Returns:** *number*
 
-Defined in: [date.ts:202](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L202)
+the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
+
+Defined in: [date.ts:312](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L312)
 
 ___
 
@@ -521,13 +619,15 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`milliseconds` | *number* |
+Name | Type | Description |
+:------ | :------ | :------ |
+`milliseconds` | *number* | the milliseconds (0–999) in the specified date according to universal time.   |
 
 **Returns:** *number*
 
-Defined in: [date.ts:262](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L262)
+the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
+
+Defined in: [date.ts:414](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L414)
 
 ___
 
@@ -537,13 +637,15 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`minutes` | *number* |
+Name | Type | Description |
+:------ | :------ | :------ |
+`minutes` | *number* | the minutes (0–59) in the specified date according to universal time.   |
 
 **Returns:** *number*
 
-Defined in: [date.ts:222](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L222)
+the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
+
+Defined in: [date.ts:346](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L346)
 
 ___
 
@@ -553,13 +655,15 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`month` | *number* |
+Name | Type | Description |
+:------ | :------ | :------ |
+`month` | *number* | the month (0–11) in the specified date according to universal time.   |
 
 **Returns:** *number*
 
-Defined in: [date.ts:148](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L148)
+the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
+
+Defined in: [date.ts:224](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L224)
 
 ___
 
@@ -569,48 +673,38 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`seconds` | *number* |
+Name | Type | Description |
+:------ | :------ | :------ |
+`seconds` | *number* | the seconds (0–59) in the specified date according to universal time.   |
 
 **Returns:** *number*
 
-Defined in: [date.ts:242](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L242)
+the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
 
-___
-
-### setUTCTimeZone
-
-▸ **setUTCTimeZone**(`offset`: *number*): *TimeZone*
-
-#### Parameters:
-
-Name | Type |
-:------ | :------ |
-`offset` | *number* |
-
-**Returns:** *TimeZone*
-
-Defined in: [date.ts:56](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L56)
+Defined in: [date.ts:380](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L380)
 
 ___
 
 ### UTC
 
-▸ `Static`**UTC**(`year`: *number*, `month?`: *number*, `day?`: *number*, `hour?`: *number*, `minute?`: *number*, `second?`: *number*, `millisecond?`: *number*): *number*
+▸ `Static`**UTC**(`year`: *number*, `month`: *number*, `day?`: *number*, `hours?`: *number*, `minutes?`: *number*, `seconds?`: *number*, `milliseconds?`: *number*): *number*
+
+Method to return the number of milliseconds since January 1, 1970, 00:00:00 UTC, with leap seconds ignored.
 
 #### Parameters:
 
-Name | Type | Default value |
-:------ | :------ | :------ |
-`year` | *number* | - |
-`month` | *number* | 0 |
-`day` | *number* | 1 |
-`hour` | *number* | 0 |
-`minute` | *number* | 0 |
-`second` | *number* | 0 |
-`millisecond` | *number* | 0 |
+Name | Type | Default value | Description |
+:------ | :------ | :------ | :------ |
+`year` | *number* | - | the full year to set.   |
+`month` | *number* | - | the month, beginning with 0 for January to 11 for December.   |
+`day` | *number* | 1 | the day of the month.   |
+`hours` | *number* | 0 | hour of the day.   |
+`minutes` | *number* | 0 | minute segment of a time.   |
+`seconds` | *number* | 0 | second segment of a time.   |
+`milliseconds` | *number* | 0 | millisecond segment of a time.   |
 
 **Returns:** *number*
 
-Defined in: [date.ts:20](https://github.com/torch2424/as-date/blob/30c25fb/assembly/date.ts#L20)
+Returns new timestamp.
+
+Defined in: [date.ts:107](https://github.com/torch2424/as-date/blob/fa04ef0/assembly/date.ts#L107)
