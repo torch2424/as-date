@@ -42,7 +42,8 @@ let date = new Date(
 // Let's set our timezone manually
 // By default a date's timezone will default to UTC+0.
 // In theory we could use Javascript's getTimezoneOffset to get this for us
-// But to also work within the current limitations of WASI, we will do this manually.
+// But we also want to work within the current limitations of WASI
+// E.g https://github.com/WebAssembly/WASI/issues/167
 
 // Set our timezone offset on the date (The offset is passed as minutes)
 let timeZoneOffsetHours = -7; // UTC-7, or Pacific Standard Time
