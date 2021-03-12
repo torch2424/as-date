@@ -14,7 +14,69 @@ This library builds upon @LiaoPeng 's work in [AssemblyScript/assemblyscript#357
 
 ## Quick Start
 
-```ts
+```typescript
+// This library is inspired by Web API Date Object
+// Feel free to also reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+import { Date } from "as-date";
+
+// Let's create the date:
+// Local time: Wednesday, March 10th, 2021 12:06:24:242 UTC-7 (Pacific Standard Time)
+// UTC Time: Wednesday, March 10th, 2021 19:06:24:242 UTC+0 (Universal Time)
+
+// Values will count from 0, unless otherwise specified.
+let year = 2021;
+let month = 2;
+let dayOfMonth = 10; // Day of the month, counts from 1.
+let dayOfWeek = 3;
+let hours = 18;
+let minutes = 6;
+let seconds = 24;
+let milliseconds = 242;
+
+// The Date Constructor takes in a timestamp in milliseconds.
+// A UTC timestamp can be made using Date.UTC
+let date = new Date(
+  Date.UTC(year, month, dayOfMonth, hours, minutes, seconds, milliseconds),
+);
+
+// Let's set our timezone manually
+// By default a date's timezone will default to UTC+0.
+// In theory we could use Javascript's getTimezoneOffset to get this for us
+// But to also work within the current limitations of WASI, we will do this manually.
+
+// Set our timezone offset on the date (The offset is passed as minutes)
+let timeZoneOffsetHours = -7; // UTC-7, or Pacific Standard Time
+date.setTimezoneOffset(timeZoneOffsetHours * 60);
+
+// Get the UTC absolute values (e.g ignore the UTC timezone offset)
+expect(date.getUTCFullYear()).toBe(year);
+expect(date.getUTCMonth()).toBe(month);
+expect(date.getUTCDate()).toBe(dayOfMonth);
+expect(date.getUTCDay()).toBe(dayOfWeek);
+expect(date.getUTCHours()).toBe(hours);
+expect(date.getUTCMinutes()).toBe(minutes);
+expect(date.getUTCSeconds()).toBe(seconds);
+expect(date.getUTCMilliseconds()).toBe(milliseconds);
+
+// Get the timezone relative value (Local time)
+expect(date.getFullYear()).toBe(year);
+expect(date.getMonth()).toBe(month);
+expect(date.getDate()).toBe(dayOfMonth);
+expect(date.getDay()).toBe(dayOfWeek);
+expect(date.getHours()).toBe(hours - 7);
+expect(date.getMinutes()).toBe(minutes);
+expect(date.getSeconds()).toBe(seconds);
+expect(date.getMilliseconds()).toBe(milliseconds);
+
+// We can also set both the local and universal time properties 
+// (FullYear, Month, Date, etc...)
+date.setHours(13);
+expect(date.getUTCHours()).toBe(20);
+expect(date.getHours()).toBe(13);
+
+date.setUTCHours(21);
+expect(date.getUTCHours()).toBe(21);
+expect(date.getHours()).toBe(14);
 ```
 
 ## Reference API

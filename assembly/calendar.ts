@@ -40,6 +40,17 @@ export class TimeZone {
     this.rawOffset = rawOffset;
   }
 
+  getTimezoneOffset(): i32 {
+    let timezoneOffset = this.rawOffset / CalendarUtils.MINUTE_IN_MILLIS;
+    return timezoneOffset;
+  }
+
+  setTimezoneOffset(minutes: i32): i32 {
+    let rawOffset = minutes * CalendarUtils.MINUTE_IN_MILLIS;
+    this.rawOffset = rawOffset;
+    return minutes;
+  }
+
   static UTC_TIME_ZONE: TimeZone = new TimeZone("UTC", 0);
 }
 
