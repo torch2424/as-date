@@ -1,4 +1,4 @@
-# [WIP, Not on NPM yet] as-date
+# as-date
 
 ![npm version](https://img.shields.io/npm/v/as-date) ![npm downloads per month](https://img.shields.io/npm/dm/as-date)
 
