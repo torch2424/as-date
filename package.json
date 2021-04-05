@@ -1,6 +1,6 @@
 {
   "name": "as-date",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Staging AssemblyScript Date implementation by @LiaoPeng , as an installable AssemblyScript library.",
   "main": "assembly/index.ts",
   "ascMain": "assembly/index.ts",
