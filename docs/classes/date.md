@@ -97,7 +97,7 @@ Name | Type |
 
 **Returns:** [*Date*](date.md)
 
-Defined in: [date.ts:86](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L86)
+Defined in: [date.ts:86](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L86)
 
 ## Properties
 
@@ -105,7 +105,7 @@ Defined in: [date.ts:86](https://github.com/torch2424/as-date/blob/0164726/assem
 
 • `Private` **localDate**: *null* \| *CalendarDate*
 
-Defined in: [date.ts:45](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L45)
+Defined in: [date.ts:45](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L45)
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 • `Private` **timeZone**: *TimeZone*
 
-Defined in: [date.ts:44](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L44)
+Defined in: [date.ts:44](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L44)
 
 ___
 
@@ -121,7 +121,7 @@ ___
 
 • `Private` **utcDate**: *null* \| *CalendarDate*
 
-Defined in: [date.ts:46](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L46)
+Defined in: [date.ts:46](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L46)
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 • `Private` **value**: *number*
 
-Defined in: [date.ts:43](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L43)
+Defined in: [date.ts:43](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L43)
 
 ## Methods
 
@@ -141,7 +141,7 @@ Defined in: [date.ts:43](https://github.com/torch2424/as-date/blob/0164726/assem
 
 the day of the month (1–31) of the specified date according to local time.
 
-Defined in: [date.ts:233](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L233)
+Defined in: [date.ts:233](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L233)
 
 ___
 
@@ -156,7 +156,7 @@ Thursday, {@code 5} = Friday, {@code 6} = Saturday)
 
 **Returns:** *number*
 
-Defined in: [date.ts:270](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L270)
+Defined in: [date.ts:270](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L270)
 
 ___
 
@@ -168,7 +168,7 @@ ___
 
 The full year as a 4-digit number, according to local time.
 
-Defined in: [date.ts:163](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L163)
+Defined in: [date.ts:163](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L163)
 
 ___
 
@@ -180,7 +180,7 @@ ___
 
 the hour (0–23) in the specified date according to local time.
 
-Defined in: [date.ts:287](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L287)
+Defined in: [date.ts:287](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L287)
 
 ___
 
@@ -190,7 +190,7 @@ ___
 
 **Returns:** *CalendarDate*
 
-Defined in: [date.ts:48](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L48)
+Defined in: [date.ts:48](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L48)
 
 ___
 
@@ -202,7 +202,7 @@ ___
 
 the milliseconds (0–999) in the specified date according to local time.
 
-Defined in: [date.ts:389](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L389)
+Defined in: [date.ts:389](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L389)
 
 ___
 
@@ -214,7 +214,7 @@ ___
 
 the minutes (0–59) in the specified date according to local time.
 
-Defined in: [date.ts:321](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L321)
+Defined in: [date.ts:321](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L321)
 
 ___
 
@@ -226,7 +226,7 @@ ___
 
 the month (0–11) in the specified date according to local time.
 
-Defined in: [date.ts:199](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L199)
+Defined in: [date.ts:199](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L199)
 
 ___
 
@@ -238,7 +238,7 @@ ___
 
 the seconds (0–59) in the specified date according to local time.
 
-Defined in: [date.ts:355](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L355)
+Defined in: [date.ts:355](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L355)
 
 ___
 
@@ -250,7 +250,7 @@ ___
 
 the number of milliseconds since January 1, 1970, 00:00:00 UTC.
 
-Defined in: [date.ts:132](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L132)
+Defined in: [date.ts:132](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L132)
 
 ___
 
@@ -262,7 +262,7 @@ ___
 
 time zone difference, in minutes, from UTC.
 
-Defined in: [date.ts:148](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L148)
+Defined in: [date.ts:148](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L148)
 
 ___
 
@@ -272,7 +272,7 @@ ___
 
 **Returns:** *CalendarDate*
 
-Defined in: [date.ts:60](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L60)
+Defined in: [date.ts:60](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L60)
 
 ___
 
@@ -284,7 +284,7 @@ ___
 
 the day of the month (1–31) of the specified date according to universal time.
 
-Defined in: [date.ts:250](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L250)
+Defined in: [date.ts:250](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L250)
 
 ___
 
@@ -299,7 +299,7 @@ Thursday, {@code 5} = Friday, {@code 6} = Saturday)
 
 **Returns:** *number*
 
-Defined in: [date.ts:280](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L280)
+Defined in: [date.ts:280](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L280)
 
 ___
 
@@ -311,7 +311,7 @@ ___
 
 The full year as a 4-digit number, according to universal time.
 
-Defined in: [date.ts:181](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L181)
+Defined in: [date.ts:181](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L181)
 
 ___
 
@@ -323,7 +323,7 @@ ___
 
 the hour (0–23) in the specified date according to universal time.
 
-Defined in: [date.ts:304](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L304)
+Defined in: [date.ts:304](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L304)
 
 ___
 
@@ -335,7 +335,7 @@ ___
 
 the milliseconds (0–999) in the specified date according to universal time.
 
-Defined in: [date.ts:406](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L406)
+Defined in: [date.ts:406](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L406)
 
 ___
 
@@ -347,7 +347,7 @@ ___
 
 the minutes (0–59) in the specified date according to universal time.
 
-Defined in: [date.ts:338](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L338)
+Defined in: [date.ts:338](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L338)
 
 ___
 
@@ -357,7 +357,7 @@ ___
 
 **Returns:** *number*
 
-Defined in: [date.ts:216](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L216)
+Defined in: [date.ts:216](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L216)
 
 ___
 
@@ -369,7 +369,7 @@ ___
 
 the seconds (0–59) in the specified date according to universal time.
 
-Defined in: [date.ts:372](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L372)
+Defined in: [date.ts:372](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L372)
 
 ___
 
@@ -379,7 +379,7 @@ ___
 
 **Returns:** bool
 
-Defined in: [date.ts:72](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L72)
+Defined in: [date.ts:72](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L72)
 
 ___
 
@@ -389,7 +389,7 @@ ___
 
 **Returns:** bool
 
-Defined in: [date.ts:80](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L80)
+Defined in: [date.ts:80](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L80)
 
 ___
 
@@ -407,7 +407,7 @@ Name | Type | Description |
 
 the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
 
-Defined in: [date.ts:241](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L241)
+Defined in: [date.ts:241](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L241)
 
 ___
 
@@ -427,7 +427,7 @@ Name | Type | Description |
 
 the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
 
-Defined in: [date.ts:172](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L172)
+Defined in: [date.ts:172](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L172)
 
 ___
 
@@ -445,7 +445,7 @@ Name | Type | Description |
 
 the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
 
-Defined in: [date.ts:295](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L295)
+Defined in: [date.ts:295](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L295)
 
 ___
 
@@ -463,7 +463,7 @@ Name | Type | Description |
 
 the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
 
-Defined in: [date.ts:397](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L397)
+Defined in: [date.ts:397](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L397)
 
 ___
 
@@ -481,7 +481,7 @@ Name | Type | Description |
 
 the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
 
-Defined in: [date.ts:329](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L329)
+Defined in: [date.ts:329](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L329)
 
 ___
 
@@ -499,7 +499,7 @@ Name | Type | Description |
 
 the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
 
-Defined in: [date.ts:207](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L207)
+Defined in: [date.ts:207](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L207)
 
 ___
 
@@ -517,7 +517,7 @@ Name | Type | Description |
 
 the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
 
-Defined in: [date.ts:363](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L363)
+Defined in: [date.ts:363](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L363)
 
 ___
 
@@ -535,7 +535,7 @@ Name | Type | Description |
 
 the number of milliseconds since January 1, 1970, 00:00:00 UTC. (the passed value)
 
-Defined in: [date.ts:140](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L140)
+Defined in: [date.ts:140](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L140)
 
 ___
 
@@ -553,7 +553,7 @@ Name | Type |
 
 time zone difference, in minutes, from UTC. (the passed value)
 
-Defined in: [date.ts:156](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L156)
+Defined in: [date.ts:156](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L156)
 
 ___
 
@@ -571,7 +571,7 @@ Name | Type | Description |
 
 the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
 
-Defined in: [date.ts:258](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L258)
+Defined in: [date.ts:258](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L258)
 
 ___
 
@@ -591,7 +591,7 @@ Name | Type | Description |
 
 the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
 
-Defined in: [date.ts:190](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L190)
+Defined in: [date.ts:190](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L190)
 
 ___
 
@@ -609,7 +609,7 @@ Name | Type | Description |
 
 the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
 
-Defined in: [date.ts:312](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L312)
+Defined in: [date.ts:312](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L312)
 
 ___
 
@@ -627,7 +627,7 @@ Name | Type | Description |
 
 the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
 
-Defined in: [date.ts:414](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L414)
+Defined in: [date.ts:414](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L414)
 
 ___
 
@@ -645,7 +645,7 @@ Name | Type | Description |
 
 the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
 
-Defined in: [date.ts:346](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L346)
+Defined in: [date.ts:346](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L346)
 
 ___
 
@@ -663,7 +663,7 @@ Name | Type | Description |
 
 the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
 
-Defined in: [date.ts:224](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L224)
+Defined in: [date.ts:224](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L224)
 
 ___
 
@@ -681,7 +681,7 @@ Name | Type | Description |
 
 the number of milliseconds since January 1, 1970, 00:00:00 UTC (the new timestamp).
 
-Defined in: [date.ts:380](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L380)
+Defined in: [date.ts:380](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L380)
 
 ___
 
@@ -707,4 +707,4 @@ Name | Type | Default value | Description |
 
 Returns new timestamp.
 
-Defined in: [date.ts:107](https://github.com/torch2424/as-date/blob/0164726/assembly/date.ts#L107)
+Defined in: [date.ts:107](https://github.com/torch2424/as-date/blob/main/assembly/date.ts#L107)

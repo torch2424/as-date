@@ -7,8 +7,8 @@
   "scripts": {
     "test": "asp --verbose",
     "lint": "prettier --write \"**/*.ts\"",
-    "deploy": "echo \"Please make sure that you updated the docs before deploying!\" && sleep 3s && np",
-    "docs": "typedoc --plugin typedoc-plugin-markdown --out temp-docs --tsconfig assembly/tsconfig.json --exclude \"node_modules/**/*\" --readme none assembly/index.ts",
+    "deploy": "npm run docs && npm run docs:deploy && np",
+    "docs": "typedoc --plugin typedoc-plugin-markdown --out temp-docs --tsconfig assembly/tsconfig.json --exclude \"node_modules/**/*\" --readme none --gitRevision main assembly/index.ts",
     "docs:deploy": "cp -r temp-docs/* docs"
   },
   "repository": {
