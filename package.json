@@ -7,6 +7,7 @@
   "scripts": {
     "test": "asp --verbose",
     "lint": "prettier --write \"**/*.ts\"",
+    "deploy": "npm run docs && npm run docs:deploy && np",
     "docs": "typedoc --plugin typedoc-plugin-markdown --out temp-docs --tsconfig assembly/tsconfig.json --exclude \"node_modules/**/*\" --readme none assembly/index.ts",
     "docs:deploy": "cp -r temp-docs/* docs"
   },
@@ -35,6 +36,7 @@
   "devDependencies": {
     "@as-pect/cli": "^6.0.0",
     "assemblyscript": "^0.18.14",
+    "np": "^7.4.0",
     "prettier": "2.2.1",
     "typedoc": "^0.20.30",
     "typedoc-plugin-markdown": "^3.6.0",
