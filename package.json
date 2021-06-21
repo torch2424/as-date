@@ -30,12 +30,9 @@
     "url": "https://github.com/torch2424/as-date/issues"
   },
   "homepage": "https://github.com/torch2424/as-date#readme",
-  "peerDependencies": {
-    "assemblyscript": "0.18.x"
-  },
   "devDependencies": {
     "@as-pect/cli": "^6.0.0",
-    "assemblyscript": "^0.18.14",
+    "assemblyscript": "^0.19.3",
     "np": "^7.4.0",
     "prettier": "2.2.1",
     "typedoc": "^0.20.30",
